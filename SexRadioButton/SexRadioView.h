@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface SexRadioView : UIView
-+(SexRadioView*)defaultSexRadioViewWithFrame:(CGRect)frame selectedSex:(void (^)(NSString *sexText))sexBlock;
+//sex:man is "man",female is "female"
++(SexRadioView*)defaultSexRadioViewWithFrame:(CGRect)frame  withDefaultSex:(NSString*)sex selectedSex:(void (^)(NSString *sexText))sexBlock;
 @end

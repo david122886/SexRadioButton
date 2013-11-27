@@ -16,7 +16,7 @@
 static SexRadioView *defaultSexRadio = nil;
 @implementation SexRadioView
 
-+(SexRadioView*)defaultSexRadioViewWithFrame:(CGRect)frame selectedSex:(void (^)(NSString *sexText))sexBlock{
++(SexRadioView*)defaultSexRadioViewWithFrame:(CGRect)frame withDefaultSex:(NSString*)sex selectedSex:(void (^)(NSString *sexText))sexBlock{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         defaultSexRadio = [[SexRadioView alloc] init];
@@ -25,7 +25,7 @@ static SexRadioView *defaultSexRadio = nil;
         [man setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [man.titleLabel setFont:[UIFont boldSystemFontOfSize:13.0f]];
         [defaultSexRadio addSubview:man];
-        [man setChecked:YES];
+        man.delegate = defaultSexRadio;
         defaultSexRadio.manRadio = man;
         
         QRadioButton *female = [[QRadioButton alloc] initWithDelegate:self groupId:@"sex"];
@@ -33,8 +33,20 @@ static SexRadioView *defaultSexRadio = nil;
         [female setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [female.titleLabel setFont:[UIFont boldSystemFontOfSize:13.0f]];
         [defaultSexRadio addSubview:female];
-        [female setChecked:NO];
+        female.delegate = defaultSexRadio;
         defaultSexRadio.femaleRadio = female;
+        if (sex) {
+            if ([[sex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@"man"]) {
+                [defaultSexRadio.manRadio setChecked:YES];
+                [defaultSexRadio.femaleRadio setChecked:NO];
+            }else{
+                [defaultSexRadio.manRadio setChecked:NO];
+                [defaultSexRadio.femaleRadio setChecked:YES];
+            }
+        }else{
+            [defaultSexRadio.manRadio setChecked:YES];
+            [defaultSexRadio.femaleRadio setChecked:NO];
+        }
     });
     defaultSexRadio.frame = frame;
     defaultSexRadio.sexBlock = sexBlock;

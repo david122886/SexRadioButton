@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
-
+#import "SexRadioView.h"
 @interface ViewController ()
+- (IBAction)testSexRadioBtClicked:(id)sender;
 
 @end
 
@@ -17,6 +18,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    SexRadioView *sexRadioView = [SexRadioView defaultSexRadioViewWithFrame:(CGRect){20,300,200,40} withDefaultSex:nil selectedSex:^(NSString *sexText) {
+        NSLog(@"%@",sexText);
+    }];
+    [self.view addSubview:sexRadioView];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -26,4 +32,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)testSexRadioBtClicked:(id)sender {
+    [SexRadioView defaultSexRadioViewWithFrame:(CGRect){20,300,200,40} withDefaultSex:@"female" selectedSex:^(NSString *sexText) {
+        NSLog(@"%@",sexText);
+    }];
+}
 @end

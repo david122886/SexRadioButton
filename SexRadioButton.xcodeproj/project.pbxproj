@@ -21,6 +21,12 @@
 		6330036B1845F8E900F7838D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6330034D1845F8E900F7838D /* UIKit.framework */; };
 		633003731845F8E900F7838D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 633003711845F8E900F7838D /* InfoPlist.strings */; };
 		633003751845F8E900F7838D /* SexRadioButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 633003741845F8E900F7838D /* SexRadioButtonTests.m */; };
+		633003871845F91600F7838D /* radio_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6330037F1845F91600F7838D /* radio_checked.png */; };
+		633003881845F91600F7838D /* radio_checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 633003801845F91600F7838D /* radio_checked@2x.png */; };
+		633003891845F91600F7838D /* radio_unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 633003811845F91600F7838D /* radio_unchecked.png */; };
+		6330038A1845F91600F7838D /* radio_unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 633003821845F91600F7838D /* radio_unchecked@2x.png */; };
+		6330038B1845F91600F7838D /* QRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 633003841845F91600F7838D /* QRadioButton.m */; };
+		6330038C1845F91600F7838D /* SexRadioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 633003861845F91600F7838D /* SexRadioView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,14 @@
 		633003701845F8E900F7838D /* SexRadioButtonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SexRadioButtonTests-Info.plist"; sourceTree = "<group>"; };
 		633003721845F8E900F7838D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		633003741845F8E900F7838D /* SexRadioButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SexRadioButtonTests.m; sourceTree = "<group>"; };
+		6330037F1845F91600F7838D /* radio_checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_checked.png; sourceTree = "<group>"; };
+		633003801845F91600F7838D /* radio_checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio_checked@2x.png"; sourceTree = "<group>"; };
+		633003811845F91600F7838D /* radio_unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_unchecked.png; sourceTree = "<group>"; };
+		633003821845F91600F7838D /* radio_unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio_unchecked@2x.png"; sourceTree = "<group>"; };
+		633003831845F91600F7838D /* QRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRadioButton.h; sourceTree = "<group>"; };
+		633003841845F91600F7838D /* QRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRadioButton.m; sourceTree = "<group>"; };
+		633003851845F91600F7838D /* SexRadioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SexRadioView.h; sourceTree = "<group>"; };
+		633003861845F91600F7838D /* SexRadioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SexRadioView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +126,7 @@
 		6330034F1845F8E900F7838D /* SexRadioButton */ = {
 			isa = PBXGroup;
 			children = (
+				6330037E1845F90600F7838D /* radioBtuuon */,
 				633003581845F8E900F7838D /* AppDelegate.h */,
 				633003591845F8E900F7838D /* AppDelegate.m */,
 				6330035B1845F8E900F7838D /* Main.storyboard */,
@@ -150,6 +165,21 @@
 				633003711845F8E900F7838D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6330037E1845F90600F7838D /* radioBtuuon */ = {
+			isa = PBXGroup;
+			children = (
+				6330037F1845F91600F7838D /* radio_checked.png */,
+				633003801845F91600F7838D /* radio_checked@2x.png */,
+				633003811845F91600F7838D /* radio_unchecked.png */,
+				633003821845F91600F7838D /* radio_unchecked@2x.png */,
+				633003831845F91600F7838D /* QRadioButton.h */,
+				633003841845F91600F7838D /* QRadioButton.m */,
+				633003851845F91600F7838D /* SexRadioView.h */,
+				633003861845F91600F7838D /* SexRadioView.m */,
+			);
+			name = radioBtuuon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +258,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6330038A1845F91600F7838D /* radio_unchecked@2x.png in Resources */,
+				633003891845F91600F7838D /* radio_unchecked.png in Resources */,
+				633003881845F91600F7838D /* radio_checked@2x.png in Resources */,
 				633003621845F8E900F7838D /* Images.xcassets in Resources */,
+				633003871845F91600F7838D /* radio_checked.png in Resources */,
 				633003541845F8E900F7838D /* InfoPlist.strings in Resources */,
 				6330035D1845F8E900F7838D /* Main.storyboard in Resources */,
 			);
@@ -250,6 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				633003601845F8E900F7838D /* ViewController.m in Sources */,
+				6330038B1845F91600F7838D /* QRadioButton.m in Sources */,
+				6330038C1845F91600F7838D /* SexRadioView.m in Sources */,
 				6330035A1845F8E900F7838D /* AppDelegate.m in Sources */,
 				633003561845F8E900F7838D /* main.m in Sources */,
 			);

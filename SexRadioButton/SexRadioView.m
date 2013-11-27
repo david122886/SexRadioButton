@@ -74,6 +74,20 @@ static SexRadioView *defaultSexRadio = nil;
 }
 */
 
+-(void)setSelectedSex:(NSString*)sex{
+    if (sex) {
+        if ([[sex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@"man"]) {
+            [defaultSexRadio.manRadio setChecked:YES];
+            [defaultSexRadio.femaleRadio setChecked:NO];
+        }else{
+            [defaultSexRadio.manRadio setChecked:NO];
+            [defaultSexRadio.femaleRadio setChecked:YES];
+        }
+    }else{
+        [defaultSexRadio.manRadio setChecked:YES];
+        [defaultSexRadio.femaleRadio setChecked:NO];
+    }
+}
 #pragma mark QRadioButtonDelegate
 -(void)didSelectedRadioButton:(QRadioButton *)radio groupId:(NSString *)groupId{
     if (self.sexBlock) {

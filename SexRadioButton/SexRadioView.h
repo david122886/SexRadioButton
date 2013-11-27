@@ -10,4 +10,7 @@
 @interface SexRadioView : UIView
 //sex:man is "man",female is "female"
 +(SexRadioView*)defaultSexRadioViewWithFrame:(CGRect)frame  withDefaultSex:(NSString*)sex selectedSex:(void (^)(NSString *sexText))sexBlock;
+
+//sex:man is "man",female is "female"
+-(void)setSelectedSex:(NSString*)sex;
 @end
